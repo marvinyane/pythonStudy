@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<StatusList>
+	<Item>
+		<Name>BT_CM_STATUS</Name>
+		<Function>Connect Manager Status  </Function>
+		<Param>
+			<Name>count</Name>
+			<Meaning>Connected device count. Max count is 5.</Meaning>
+			<Type>Uint16</Type>
+		</Param>
+		<Param>
+			<Name>functions</Name>
+			<Meaning>Total connected functions.</Meaning>
+			<Type>Uint16</Type>
+		</Param>
+		<Param>
+			<Name>deviceInfo</Name>
+			<Meaning>Connected devices info.</Meaning>
+			<Type>BT_CONNECTED_DEVICE_INFO-5</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_CONNECTED_DEVICE_INFO</Name>
+		<Function>Connected devices information.  </Function>
+		<Param>
+			<Name>address</Name>
+			<Meaning>The connected devices address.</Meaning>
+			<Type>bdaddr</Type>
+		</Param>
+		<Param>
+			<Name>services</Name>
+			<Meaning>The connected services with remote device.</Meaning>
+			<Type>Uint32</Type>
+		</Param>
+	</Item>
+</StatusList>

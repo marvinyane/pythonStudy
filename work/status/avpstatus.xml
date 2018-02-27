@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<StatusList>
+	<Item>
+		<Name>BT_AVP_STATUS</Name>
+		<Function>Avp (a2dp &amp; avrcp status).</Function>
+		<Param>
+			<Name>num</Name>
+			<Meaning>The number of connect AVP device</Meaning>
+			<Type>uint8</Type>
+		</Param>
+		<Param>
+			<Name>avpDev</Name>
+			<Meaning>Remote device info</Meaning>
+			<Type>BT_AVP_DEV_STATUS-2</Type>
+		</Param>
+		<Param>
+			<Name>activeSourceStatus</Name>
+			<Meaning>Active source status</Meaning>
+			<Type>BT_AVP_ACTIVE_STATUS</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_AVP_DEV_STATUS</Name>
+		<Function>Avp (a2dp &amp; avrcp status).</Function>
+		<Param>
+			<Name>devId</Name>
+			<Meaning>.Unique number for identifying the avp connection device</Meaning>
+			<Type>uint8</Type>
+		</Param>
+		<Param>
+			<Name>addr</Name>
+			<Meaning>Remote device address</Meaning>
+			<Type>bdaddr</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_AVP_ACTIVE_STATUS</Name>
+		<Function>Current  Active Avrcp status</Function>
+		<Param>
+			<Name>devId</Name>
+			<Meaning>Device id</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>Support_notification</Name>
+			<Meaning>notiMask of support avrcp notifications</Meaning>
+			<Type>uint32</Type>
+		</Param>
+		<Param>
+			<Name>Registed_notification</Name>
+			<Meaning>notiMask of registed avrcp notification for stand .</Meaning>
+			<Type>uint32</Type>
+		</Param>
+		<Param>
+			<Name>Play_status</Name>
+			<Meaning>Playback status</Meaning>
+			<Type>BT_AVP_PLAYBACK_STATUS</Type>
+		</Param>
+		<Param>
+			<Name>Meta_data</Name>
+			<Meaning>Meta data info of the song  the index of the metadata id</Meaning>
+			<Type>BT_AVP_METADATA_INFO-8</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_AVP_PLAYBACK_STATUS</Name>
+		<Function>Playback status</Function>
+		<Param>
+			<Name>playstatus</Name>
+			<Meaning>Play status such as play ,pause stop</Meaning>
+			<Type>uint8</Type>
+		</Param>
+		<Param>
+			<Name>Song_length</Name>
+			<Meaning>Total time of the song length</Meaning>
+			<Type>uint32</Type>
+		</Param>
+		<Param>
+			<Name>Play_position</Name>
+			<Meaning>Elapse time of the current song</Meaning>
+			<Type>uint32</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_AVP_METADATA_INFO</Name>
+		<Function>Playback status
+</Function>
+		<Param>
+			<Name>attrId</Name>
+			<Meaning>Character set</Meaning>
+			<Type>Uint32</Type>
+		</Param>
+		<Param>
+			<Name>charset</Name>
+			<Meaning>Character set</Meaning>
+			<Type>Uint32</Type>
+		</Param>
+		<Param>
+			<Name>len</Name>
+			<Meaning>The length of attribute</Meaning>
+			<Type>Uint16</Type>
+		</Param>
+		<Param>
+			<Name>attribute</Name>
+			<Meaning>Attribute text</Meaning>
+			<Type>Uint8-50</Type>
+		</Param>
+	</Item>
+</StatusList>

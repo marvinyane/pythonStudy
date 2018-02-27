@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<StatusList>
+	<Item>
+		<Name>BT_GEN_STATUS</Name>
+		<Function>The General information of our device.</Function>
+		<Param>
+			<Name>enable</Name>
+			<Meaning>Whether bt enable.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>addr</Name>
+			<Meaning>Local Bluetooth address.</Meaning>
+			<Type>Bdaddr</Type>
+		</Param>
+		<Param>
+			<Name>name</Name>
+			<Meaning>The name of local device.</Meaning>
+			<Type>Uint8-255</Type>
+		</Param>
+		<Param>
+			<Name>mode</Name>
+			<Meaning>Local device mode, discovery &amp; connectable &amp; bonderable mode</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>feature</Name>
+			<Meaning>Supported feature of local devices.</Meaning>
+			<Type>Uint32</Type>
+		</Param>
+	</Item>
+</StatusList>

@@ -1,0 +1,5 @@
+according the xml file to create envrionment
+
+1. create proto file by generate_proto.py
+2. create library files by generate_lib_files.py
+3. create test file of cpp or python

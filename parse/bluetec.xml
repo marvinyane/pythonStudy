@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Device name="BLUETEC" model="BLUETEC" version="0.1">
+	<Config>
+		<Format bcspwrapped="1">
+			<PacketType>binary</PacketType>
+			<PacketFormat>btcarsocketkit</PacketFormat>
+		</Format>
+		<Plugins>0</Plugins>
+	</Config>
+	<CmdList bigendian="1">
+		<CMD type="CMD" group="WFD">
+			<Name alias="wpor">GONI_WFD_POWER_ON_REQ</Name>
+			<Function>Request power on the Miracast</Function>
+			<OPCode>0x101</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wpoc">GONI_WFD_POWER_ON_CFM</Name>
+			<Function>response about power on the WFD function</Function>
+			<OPCode>0x8201</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wpor1">GONI_WFD_POWER_OFF_REQ</Name>
+			<Function>Request power off the Miracast</Function>
+			<OPCode>0x102</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wpoc1">GONI_WFD_POWER_OFF_CFM</Name>
+			<Function>response about power off the WFD function</Function>
+			<OPCode>0x8202</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wgsr">GONI_WFD_GET_STATE_REQ</Name>
+			<Function>Request to get the state </Function>
+			<OPCode>0x10E</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wgsc">GONI_WFD_GET_STATE_CFM</Name>
+			<Function>response about get the state</Function>
+			<OPCode>0x820E</OPCode>
+			<Param>
+				<Name>sid</Name>
+				<Meaning>The current state</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wsar">GONI_WFD_SET_AUTOGO_REQ</Name>
+			<Function>Request set as autonomous GO</Function>
+			<OPCode>0x108</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wsac">GONI_WFD_SET_AUTOGO_CFM</Name>
+			<Function>response about set autonomous GO</Function>
+			<OPCode>0x8208</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wcar">GONI_WFD_CANCEL_AUTOGO_REQ</Name>
+			<Function>Request cancel autonomous GO mode</Function>
+			<OPCode>0x109</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wcac">GONI_WFD_CANCEL_AUTOGO_CFM</Name>
+			<Function>response about cancel autonomous GO</Function>
+			<OPCode>0x8209</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wssr">GONI_WFD_START_SCAN_REQ</Name>
+			<Function>Request start scan the miracast devices</Function>
+			<OPCode>0x103</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wssc">GONI_WFD_START_SCAN_CFM</Name>
+			<Function>response about start scan</Function>
+			<OPCode>0x8203</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wsri">GONI_WFD_SCAN_RESULT_IND</Name>
+			<Function>response about scan result</Function>
+			<OPCode>0x8203</OPCode>
+			<Param>
+				<Name>ssidLen</Name>
+				<Meaning>The lenth of ssid</Meaning>
+				<Type>uint16</Type>
+			</Param>
+			<Param>
+				<Name>ssid</Name>
+				<Meaning>ssid of remote device</Meaning>
+				<Type>str</Type>
+			</Param>
+			<Param>
+				<Name>mac</Name>
+				<Meaning>macaddress of remote device</Meaning>
+				<Type>uint64</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wsci">GONI_WFD_SCAN_COMPLETE_IND</Name>
+			<Function>response about scan completed</Function>
+			<OPCode>0x8203</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of completed</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wssr1">GONI_WFD_STOP_SCAN_REQ</Name>
+			<Function>Request stop scan the miracast devices</Function>
+			<OPCode>0x104</OPCode>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wssc1">GONI_WFD_STOP_SCAN_CFM</Name>
+			<Function>response about stop scan</Function>
+			<OPCode>0x8204</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wscr">GONI_WFD_START_CONNECT_REQ</Name>
+			<Function>Request connect the Miracast device</Function>
+			<OPCode>0x8106</OPCode>
+			<Param>
+				<Name>mac</Name>
+				<Meaning>The mac address of device which to connect</Meaning>
+				<Type>uint64</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wscc">GONI_WFD_START_CONNECTE_CFM</Name>
+			<Function>response about start connect</Function>
+			<OPCode>0x8206</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wair">GONI_WFD_ACCEP_INVITE_REQ</Name>
+			<Function>Request accept the invite from peer device</Function>
+			<OPCode>0x10A</OPCode>
+			<Param>
+				<Name>mac</Name>
+				<Meaning>The mac address of device which to connect</Meaning>
+				<Type>uint64</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="waic">GONI_WFD_ACCEPT_INVITE_CFM</Name>
+			<Function>response about accept invite</Function>
+			<OPCode>0x820A</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wrir">GONI_WFD_REJECT_INVITE_REQ</Name>
+			<Function>Request reject the invite from peer device</Function>
+			<OPCode>0x10B</OPCode>
+			<Param>
+				<Name>mac</Name>
+				<Meaning>The mac address of device which to connect</Meaning>
+				<Type>uint64</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wric">GONI_WFD_REJECT_INVITE_CFM</Name>
+			<Function>response about reject invite</Function>
+			<OPCode>0x820B</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wddr">GONI_WFD_DISCONNECT_DEVICE_REQ</Name>
+			<Function>Request to disconnect the connected device</Function>
+			<OPCode>0x10D</OPCode>
+			<Param>
+				<Name>mac</Name>
+				<Meaning>The mac address of device which to connect</Meaning>
+				<Type>uint64</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wdc">GONI_WFD_DISCONNECT_CFM</Name>
+			<Function>response about disconnect the connected device</Function>
+			<OPCode>0x820D</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wdi">GONI_WFD_DISCONNECT_IND</Name>
+			<Function>notify about the device disconnect</Function>
+			<OPCode>0x8201</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wssr2">GONI_WFD_SET_SURFACEID_REQ</Name>
+			<Function>Request set the surface id to display</Function>
+			<OPCode>0x10F</OPCode>
+			<Param>
+				<Name>id</Name>
+				<Meaning>The surface id for display</Meaning>
+				<Type>uint32</Type>
+			</Param>
+		</CMD>
+		<CMD type="EVT" group="WFD">
+			<Name alias="wssc2">GONI_WFD_SET_SURFACEID_CFM</Name>
+			<Function>Response of setting the surface id to display</Function>
+			<OPCode>0x10F</OPCode>
+			<Param>
+				<Name>state</Name>
+				<Meaning>The error number of previous REQ</Meaning>
+				<Type>uint16</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wstr">GONI_WFD_SEND_TOUCHDATA_REQ</Name>
+			<Function>request to send UIBC touch data</Function>
+			<OPCode>0x10F</OPCode>
+			<Param>
+				<Name>typeID</Name>
+				<Meaning>The type ID of the touch data</Meaning>
+				<Type>uint8</Type>
+			</Param>
+			<Param>
+				<Name>dataLen</Name>
+				<Meaning>The data length </Meaning>
+				<Type>uint16</Type>
+			</Param>
+			<Param>
+				<Name>data</Name>
+				<Meaning>the coordinate value </Meaning>
+				<Type>buff</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wszr">GONI_WFD_SEND_ZOOMDATA_REQ</Name>
+			<Function>request to send UIBC zoom data</Function>
+			<OPCode>0x10F</OPCode>
+			<Param>
+				<Name>coordData</Name>
+				<Meaning>The coordinate value of the center point</Meaning>
+				<Type>uint16</Type>
+			</Param>
+			<Param>
+				<Name>zoomTimes</Name>
+				<Meaning>The zoom times </Meaning>
+				<Type>uint8</Type>
+			</Param>
+		</CMD>
+		<CMD type="CMD" group="WFD">
+			<Name alias="wsrr">GONI_WFD_SEND_ROTATEDATA_REQ</Name>
+			<Function>request to send UIBC zoom data</Function>
+			<OPCode>0x10F</OPCode>
+			<Param>
+				<Name>rotateInteger[10]</Name>
+				<Meaning>The signed integer portion of the amount to rotate in units in radians.</Meaning>
+				<Type>uint8</Type>
+			</Param>
+			<Param>
+				<Name>rotateFraction</Name>
+				<Meaning>The fraction portion of the amount to rotate in units of radians.</Meaning>
+				<Type>uint8</Type>
+			</Param>
+		</CMD>
+	</CmdList>
+</Device>

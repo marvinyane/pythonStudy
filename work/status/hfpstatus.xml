@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<StatusList>
+	<Item>
+		<Name>BT_HFP_OPERATOR_STATUS</Name>
+		<Function>The phone operator status</Function>
+		<Param>
+			<Name>addr</Name>
+			<Meaning>Device address</Meaning>
+			<Type>bdaddr</Type>
+		</Param>
+		<Param>
+			<Name>devId</Name>
+			<Meaning>Device id.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>signal</Name>
+			<Meaning>The signal level</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>battery</Name>
+			<Meaning>The battery level.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>roam</Name>
+			<Meaning>The roam situation</Meaning>
+			<Type>uint8</Type>
+		</Param>
+		<Param>
+			<Name>name</Name>
+			<Meaning>The operator name or remote device.</Meaning>
+			<Type>uint8-50</Type>
+		</Param>
+		<Param>
+			<Name>num</Name>
+			<Meaning>The subscriber or remote device.</Meaning>
+			<Type>uint8-50</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_HFP_CALL_STATUS</Name>
+		<Function>The phone call status</Function>
+		<Param>
+			<Name>addr</Name>
+			<Meaning>Device address</Meaning>
+			<Type>bdaddr</Type>
+		</Param>
+		<Param>
+			<Name>devId</Name>
+			<Meaning>Device id.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>callState</Name>
+			<Meaning>Call state</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>callListSign</Name>
+			<Meaning>The sign of call list.</Meaning>
+			<Type>Uint16</Type>
+		</Param>
+		<Param>
+			<Name>callList</Name>
+			<Meaning>Call state</Meaning>
+			<Type>BT_HFP_CALL_LIST_INFO-6</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_HFP_CALL_LIST_INFO</Name>
+		<Function>Call list info.</Function>
+		<Param>
+			<Name>dir</Name>
+			<Meaning>direction</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>stat</Name>
+			<Meaning>Call state.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>mode</Name>
+			<Meaning>Call mode.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>mpty</Name>
+			<Meaning>Call multiply.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>num</Name>
+			<Meaning>Call number , end with 0.</Meaning>
+			<Type>Uint8-50</Type>
+		</Param>
+	</Item>
+	<Item>
+		<Name>BT_HFP_STATUS</Name>
+		<Function>The phone operator status</Function>
+		<Param>
+			<Name>count</Name>
+			<Meaning>Connected hfp devices count, max number is 2.</Meaning>
+			<Type>Uint8</Type>
+		</Param>
+		<Param>
+			<Name>operators</Name>
+			<Meaning>Hfp operator status.</Meaning>
+			<Type>BT_HFP_OPERATOR_STATUS-2</Type>
+		</Param>
+		<Param>
+			<Name>call</Name>
+			<Meaning>Hfo call info status</Meaning>
+			<Type>BT_HFP_CALL_STATUS-2</Type>
+		</Param>
+	</Item>
+</StatusList>
