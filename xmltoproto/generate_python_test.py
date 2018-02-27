@@ -16,13 +16,13 @@ types = {
         }
 
 def create_header(f_handler):
-    f_handler.write("import bluetec_pb2\n")
+    f_handler.write("import marvin_pb2\n")
 
 def create_cmd(cmds):
-    f_cmd = open('bluetec_cmds.py', 'w')
+    f_cmd = open('marvin_cmds.py', 'w')
     create_header(f_cmd)
 
-    f_cmd.write('import bluetec_tools\n\n')
+    f_cmd.write('import marvin_tools\n\n')
 
     for cmd in cmds:
         type = cmd['name'].split('_')[-1]
@@ -32,7 +32,7 @@ def create_cmd(cmds):
                 f_cmd.write(" ,%s" %(param['name']))
 
             f_cmd.write('):\n')
-            f_cmd.write("\tobj = bluetec_pb2.%s_C()\n" %(cmd['name']))
+            f_cmd.write("\tobj = marvin_pb2.%s_C()\n" %(cmd['name']))
             f_cmd.write("\tobj.opcode = %s\n" %(cmd['opcode']))
 
             for param in cmd['params']:
@@ -42,11 +42,11 @@ def create_cmd(cmds):
                     else:
                         f_cmd.write("\tobj.%s = %s\n" %(param['name'], param['name']))
 
-            f_cmd.write("\tbluetec_tools.send_data(sock, obj.SerializeToString())\n")
+            f_cmd.write("\tmarvin_tools.send_data(sock, obj.SerializeToString())\n")
     f_cmd.close()
 
 def create_evt(cmds):
-    f_evt = open('bluetec_evts.py', 'w')
+    f_evt = open('marvin_evts.py', 'w')
     create_header(f_evt)
 
     f_evt.write("def parseEvent(opcode, data):\n")
@@ -61,14 +61,14 @@ def create_evt(cmds):
         type = cmd['name'].split('_')[-1]
         if type == 'CFM' or type == 'IND':
             f_evt.write("def %s(opcode, data):\n" %(cmd['name']))
-            f_evt.write("\tobj = bluetec_pb2.%s_C()\n" %(cmd['name']))
+            f_evt.write("\tobj = marvin_pb2.%s_C()\n" %(cmd['name']))
             f_evt.write("\tobj.ParseFromString(data)\n")
             f_evt.write("\treturn obj\n")
 
     f_evt.close()
 
 def create_message_dump(cmds):
-    fh = open('bluetec_dump.py', 'w')
+    fh = open('marvin_dump.py', 'w')
     fh.write('import sys\n')
     create_header(fh)
 

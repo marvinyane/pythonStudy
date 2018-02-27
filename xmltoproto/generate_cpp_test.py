@@ -20,10 +20,10 @@ def create_header(f_handler):
     f_handler.write("#include <stdio.h>\n")
     f_handler.write("#include <stdlib.h>\n")
     f_handler.write("#include <string.h>\n")
-    f_handler.write('#include "bluetec_hif.h"\n')
-    f_handler.write('#include "bluetec_types.h"\n')
-    f_handler.write('#include "bluetec_general_if.h"\n')
-    f_handler.write('#include "bluetec.pb.h"\n')
+    f_handler.write('#include "marvin_hif.h"\n')
+    f_handler.write('#include "marvin_types.h"\n')
+    f_handler.write('#include "marvin_general_if.h"\n')
+    f_handler.write('#include "marvin.pb.h"\n')
 
     f_handler.write('using namespace std;\n')
 

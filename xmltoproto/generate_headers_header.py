@@ -21,5 +21,5 @@ def generate_headers_tail(fh):
     fh.write("#endif\n")
 
 if __name__ == '__main__':
-    generate_headers_header(sys.stdout, "bluetec_general_if.h")
+    generate_headers_header(sys.stdout, "marvin_general_if.h")
     generate_headers_tail(sys.stdout)

@@ -47,8 +47,8 @@ def create_func(name, params, rvalue):
     return str
 
 def create_hif(cmds):
-    fh = open('bluetec_hif.h', 'w')
-    generate_headers_header(fh, 'bluetec_hif.h')
+    fh = open('marvin_hif.h', 'w')
+    generate_headers_header(fh, 'marvin_hif.h')
     for cmd in cmds:
         name = "{:<50}".format(cmd['name'])
         fh.write("#define %s (0x%04x)\n" %(name, int(cmd['opcode'], 16)))
@@ -57,7 +57,7 @@ def create_hif(cmds):
     fh.close()
 
 def create_header(cmds, tag):
-    filename = 'bluetec_%s_if.h' % names[tag]
+    filename = 'marvin_%s_if.h' % names[tag]
     filename_cmd = 'app_%s_cmd.h' % tag
     filename_evt = 'app_%s_evt.h' % tag
     fh = open(filename, 'w')
